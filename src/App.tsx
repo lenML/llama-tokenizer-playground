@@ -253,7 +253,7 @@ function App() {
 
   const tokens = useMemo(() => {
     return tokenizer.tokenize(value).tokens;
-  }, [value]);
+  }, [tokenizer, value]);
 
   // highlight ranges
   const [highlight, setHighlight] = useState(null as null | [number, number]);
