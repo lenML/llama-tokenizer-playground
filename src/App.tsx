@@ -217,22 +217,32 @@ const useSelectionTokenRange = ({
     };
 
     let selecting = false;
-    window.addEventListener("mousedown", () => {
+    const mousedown_handler = () => {
       selecting = true;
       setHighlight(null);
-    });
-    window.addEventListener("mouseup", () => {
+    };
+    const mouseup_handler = () => {
       if (selecting) {
         calcSelectionRange();
       }
       selecting = false;
-    });
-    window.addEventListener("mousemove", () => {
+    };
+    const mousemove_handler = () => {
       if (selecting) {
         calcSelectionRange();
       }
-    });
-  }, []);
+    };
+
+    window.addEventListener("mousedown", mousedown_handler);
+    window.addEventListener("mouseup", mouseup_handler);
+    window.addEventListener("mousemove", mousemove_handler);
+
+    return () => {
+      window.removeEventListener("mousedown", mousedown_handler);
+      window.removeEventListener("mouseup", mouseup_handler);
+      window.removeEventListener("mousemove", mousemove_handler);
+    };
+  }, [setHighlight]);
 };
 
 function App() {
