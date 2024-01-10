@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@lenml/llama2-tokenizer": "^1.0.1",
     "@testing-library/jest-dom": "^5.17.0",
