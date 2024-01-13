@@ -153,6 +153,15 @@ const TokenStatsContainer = ({
   value: string;
   tokens: TokenizerResult["tokens"];
 }) => {
+  // 压缩率
+  const comp_rate = useMemo(() => {
+    const rate = tokens.length / value.length;
+    if (Number.isNaN(rate)) {
+      return 0;
+    }
+    return (Math.round(rate * 100 * 100) / 100).toFixed(2);
+  }, [tokens.length, value.length]);
+
   return (
     <div>
       <TokenStat>
@@ -162,6 +171,10 @@ const TokenStatsContainer = ({
       <TokenStat>
         <TokenStatsTitle>Characters</TokenStatsTitle>
         <TokenStatsVal>{value.length}</TokenStatsVal>
+      </TokenStat>
+      <TokenStat>
+        <TokenStatsTitle>Compress Rate (tokens / chars)</TokenStatsTitle>
+        <TokenStatsVal>{comp_rate}%</TokenStatsVal>
       </TokenStat>
     </div>
   );
