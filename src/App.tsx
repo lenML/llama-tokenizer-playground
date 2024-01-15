@@ -93,6 +93,7 @@ const TokenizerOutput = styled.div`
   padding: 10px 12px 45px;
   position: relative;
   transition: opacity 0.3s;
+  word-break: break-word;
 
   span {
     font-family: var(--monospace);
