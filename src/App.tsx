@@ -170,7 +170,7 @@ const TokenStatsContainer = ({
         <TokenStatsVal>{tokens.length}</TokenStatsVal>
       </TokenStat>
       <TokenStat>
-        <TokenStatsTitle>Characters</TokenStatsTitle>
+        <TokenStatsTitle>Chars</TokenStatsTitle>
         <TokenStatsVal>{value.length}</TokenStatsVal>
       </TokenStat>
       <TokenStat>
