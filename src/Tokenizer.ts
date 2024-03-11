@@ -1,4 +1,5 @@
 import { Llama2Tokenizer } from "@lenml/llama2-tokenizer";
+import { load_vocab } from "@lenml/llama2-tokenizer-vocab-llama2";
 
 export interface TokenizerResult {
   tokens: {
@@ -16,7 +17,8 @@ const isHexToken = (token: string) => {
 export class Tokenizer {
   protected tokenizer = new Llama2Tokenizer();
   constructor() {
-    this.tokenizer.load_llama2_vocab();
+    const vocab_model = load_vocab();
+    this.tokenizer.install_vocab(vocab_model);
   }
   tokenize(text: string) {
     const tokens = this.tokenizer.tokenize(text);
