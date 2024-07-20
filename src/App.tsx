@@ -34,6 +34,9 @@ const Body = styled.div`
     margin-bottom: 1em;
     margin-top: 1em;
   }
+  a {
+    color: var(--gray-300);
+  }
 `;
 const Header = styled.div`
   align-items: center;
@@ -98,14 +101,15 @@ const TokenizerOutput = styled.div`
   span {
     font-family: var(--monospace);
     font-size: 15px;
+    color: var(--gray-800);
   }
 `;
 const TokenStatsTitle = styled.div`
-  color: var(--gray-900);
+  color: var(--gray-100);
   font-weight: 700;
 `;
 const TokenStatsVal = styled.div`
-  color: var(--gray-900);
+  color: var(--gray-100);
   font-size: 28px;
   margin-top: 4px;
 `;
